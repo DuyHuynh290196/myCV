@@ -180,7 +180,6 @@ function renderCtas(resume) {
   const ctaRow = document.getElementById("ctaRow");
   const email = resume.contact.find((item) => item.icon === "email");
   const phone = resume.contact.find((item) => item.icon === "phone");
-  const activeSocialLinks = resume.socialLinks.filter((item) => item.href);
 
   ctaRow.innerHTML = `
     <button type="button" class="cta-button" id="downloadButton">
@@ -198,13 +197,10 @@ function renderCtas(resume) {
   `;
 
   document.getElementById("downloadButton").addEventListener("click", () => {
-    const originalTitle = document.title;
-
-    document.title = `${resume.name.replace(/\s+/g, "-")}-CV`;
-    window.print();
-    window.setTimeout(() => {
-      document.title = originalTitle;
-    }, 500);
+    window.ResumePrint.exportResumePdf({
+      resume,
+      lang: state.lang,
+    });
   });
 }
 
