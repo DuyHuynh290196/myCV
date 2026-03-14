@@ -185,15 +185,10 @@
   ],
   "socialLinks": [
     {
-      "label": "GitHub",
-      "href": "",
-      "icon": "github"
-    },
-    {
       "label": "LinkedIn",
-      "href": "",
+      "href": "https://www.linkedin.com/in/duyhuynh2901",
       "icon": "linkedin"
     }
   ],
-  "socialNote": "Add your GitHub and LinkedIn profile URLs in the JSON files to activate these links."
+  "socialNote": ""
 }

@@ -6,7 +6,7 @@
   "cta": {
     "download": "Tải CV PDF",
     "email": "Gửi email",
-    "call": "Gọi điện"
+    "call": "Liên hệ"
   },
   "sections": {
     "contact": "Liên hệ",
@@ -97,7 +97,7 @@
   "desiredJob": [
     {
       "label": "Cấp bậc",
-      "value": "Nhân sự có kinh nghiệm (không quản lý)"
+      "value": "Nhân sự có kinh nghiệm"
     },
     {
       "label": "Mức lương",
@@ -131,7 +131,7 @@
     },
     {
       "label": "Cấp độ hiện tại",
-      "value": "Nhân sự có kinh nghiệm (không quản lý)"
+      "value": "Nhân sự có kinh nghiệm"
     }
   ],
   "experience": [
@@ -185,15 +185,10 @@
   ],
   "socialLinks": [
     {
-      "label": "GitHub",
-      "href": "",
-      "icon": "github"
-    },
-    {
       "label": "LinkedIn",
-      "href": "",
+      "href": "https://www.linkedin.com/in/duyhuynh2901",
       "icon": "linkedin"
     }
   ],
-  "socialNote": "Thêm URL GitHub và LinkedIn của bạn trong các file JSON để kích hoạt các liên kết này."
+  "socialNote": ""
 }

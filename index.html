@@ -14,20 +14,6 @@
   </head>
   <body>
     <div class="app-shell">
-      <header class="topbar">
-        <div class="topbar-copy">
-          <p class="topbar-kicker" id="availabilityText"></p>
-          <h1 class="topbar-title" id="heroTitle"></h1>
-        </div>
-        <div class="topbar-controls">
-          <div class="language-switch" aria-label="Language switcher">
-            <button type="button" class="language-button" data-lang="vi">VI</button>
-            <button type="button" class="language-button" data-lang="en">EN</button>
-          </div>
-          <div class="cta-row" id="ctaRow"></div>
-        </div>
-      </header>
-
       <main class="page">
         <aside class="sidebar">
           <section class="profile">
@@ -38,6 +24,10 @@
               <div class="name">Huỳnh Khắc Duy</div>
               <div class="role" id="roleText"></div>
             </div>
+          </section>
+
+          <section class="section section--cta">
+            <div class="cta-row cta-row--sidebar" id="ctaRow"></div>
           </section>
 
           <section class="section">
@@ -94,6 +84,13 @@
           </section>
         </section>
       </main>
+    </div>
+    <div
+      class="language-switch language-switch--floating"
+      aria-label="Language switcher"
+    >
+      <button type="button" class="language-button" data-lang="vi">VI</button>
+      <button type="button" class="language-button" data-lang="en">EN</button>
     </div>
     <script src="script.js"></script>
   </body>

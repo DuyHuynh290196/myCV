@@ -23,6 +23,14 @@ const state = {
   resumes: {},
 };
 
+function setText(id, text) {
+  const element = document.getElementById(id);
+
+  if (element) {
+    element.textContent = text;
+  }
+}
+
 function getResume() {
   return state.resumes[state.lang];
 }
@@ -187,16 +195,6 @@ function renderCtas(resume) {
       ${renderIcon("phone")}
       <span>${resume.cta.call}</span>
     </a>
-    ${activeSocialLinks
-      .map(
-        (item) => `
-          <a class="cta-button" href="${item.href}" target="_blank" rel="noopener noreferrer">
-            ${renderIcon(item.icon)}
-            <span>${item.label}</span>
-          </a>
-        `
-      )
-      .join("")}
   `;
 
   document.getElementById("downloadButton").addEventListener("click", () => {
@@ -211,19 +209,18 @@ function renderCtas(resume) {
 }
 
 function renderStaticText(resume) {
-  document.getElementById("availabilityText").textContent = resume.availability;
-  document.getElementById("heroTitle").textContent = resume.heroTitle;
-  document.getElementById("roleText").textContent = resume.role;
-  document.getElementById("contactTitle").textContent = resume.sections.contact;
-  document.getElementById("personalTitle").textContent = resume.sections.personal;
-  document.getElementById("skillsTitle").textContent = resume.sections.skills;
-  document.getElementById("languagesTitle").textContent = resume.sections.languages;
-  document.getElementById("desiredJobTitle").textContent = resume.sections.desiredJob;
-  document.getElementById("socialTitle").textContent = resume.sections.social;
-  document.getElementById("experienceTitle").textContent = resume.sections.experience;
-  document.getElementById("educationTitle").textContent = resume.sections.education;
-  document.getElementById("certificatesTitle").textContent =
-    resume.sections.certificates;
+  setText("availabilityText", resume.availability);
+  setText("heroTitle", resume.heroTitle);
+  setText("roleText", resume.role);
+  setText("contactTitle", resume.sections.contact);
+  setText("personalTitle", resume.sections.personal);
+  setText("skillsTitle", resume.sections.skills);
+  setText("languagesTitle", resume.sections.languages);
+  setText("desiredJobTitle", resume.sections.desiredJob);
+  setText("socialTitle", resume.sections.social);
+  setText("experienceTitle", resume.sections.experience);
+  setText("educationTitle", resume.sections.education);
+  setText("certificatesTitle", resume.sections.certificates);
 }
 
 function updateLanguageButtons() {
@@ -266,10 +263,8 @@ function renderPage() {
 function renderLoadError() {
   document.documentElement.lang = "en";
   document.title = "Resume data failed to load";
-  document.getElementById("availabilityText").textContent =
-    "Resume data could not be loaded";
-  document.getElementById("heroTitle").textContent =
-    "Open this project through a local server to load JSON content.";
+  setText("availabilityText", "Resume data could not be loaded");
+  setText("heroTitle", "Open this project through a local server to load JSON content.");
   document.getElementById("summary").innerHTML =
     "<p>JSON files are blocked in many browsers when the page is opened with file://. Run a small local server and open the page from http://localhost instead.</p>";
   document.getElementById("ctaRow").innerHTML = "";
