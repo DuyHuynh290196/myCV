@@ -19,7 +19,7 @@ const icons = {
 };
 
 const state = {
-  lang: localStorage.getItem("resume-lang") === "vi" ? "vi" : "en",
+  lang: "en",
   resumes: {},
 };
 
@@ -183,7 +183,7 @@ function renderCtas(resume) {
   const activeSocialLinks = resume.socialLinks.filter((item) => item.href);
 
   ctaRow.innerHTML = `
-    <button type="button" class="cta-button cta-button--primary" id="downloadButton">
+    <button type="button" class="cta-button" id="downloadButton">
       ${renderIcon("download")}
       <span>${resume.cta.download}</span>
     </button>
@@ -288,7 +288,6 @@ async function loadResumeFiles() {
 
 function setLanguage(lang) {
   state.lang = lang;
-  localStorage.setItem("resume-lang", lang);
   renderPage();
 }
 

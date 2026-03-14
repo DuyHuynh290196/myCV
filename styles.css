@@ -548,6 +548,21 @@ body {
 }
 
 @media print {
+  :root {
+    --print-sidebar-width: 35%;
+    --print-sidebar-gap: 16px;
+  }
+
+  @page {
+    margin: 8mm;
+    size: A4 portrait;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
   body {
     background: #fff;
   }
@@ -562,8 +577,206 @@ body {
     display: none;
   }
 
+  .section--cta,
+  #ctaRow,
+  .cta-row--sidebar {
+    display: none !important;
+  }
+
+  body,
+  .main,
+  .summary,
+  .job-bullets,
+  .certificate-meta,
+  .certificate {
+    color: var(--text-body) !important;
+  }
+
   .page {
+    display: block;
     border-radius: 0;
     box-shadow: none;
+    overflow: visible;
+  }
+
+  .page::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .sidebar {
+    float: left;
+    width: var(--print-sidebar-width) !important;
+    padding: 18px 16px 16px !important;
+    margin-right: var(--print-sidebar-gap);
+    background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-dark-2) 100%) !important;
+    color: var(--text-light) !important;
+    break-inside: auto;
+    page-break-inside: auto;
+    -webkit-print-color-adjust: exact !important;
+    gap: 12px !important;
+  }
+
+  .main {
+    display: block;
+    overflow: visible;
+    width: auto !important;
+    margin-left: calc(var(--print-sidebar-width) + var(--print-sidebar-gap));
+    padding: 0 !important;
+    font-size: 0.97rem !important;
+    line-height: 1.42 !important;
+  }
+
+  .profile {
+    gap: 8px;
+  }
+
+  .avatar {
+    width: 84px;
+    height: 84px;
+    border-width: 5px;
+  }
+
+  .name-card {
+    padding: 10px 12px 9px;
+  }
+
+  .name-card {
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong)) !important;
+    color: #fff !important;
+  }
+
+  .name-card .name {
+    font-size: 1rem;
+  }
+
+  .name-card .role {
+    font-size: 0.88rem;
+  }
+
+  .section {
+    gap: 8px;
+  }
+
+  .summary {
+    background:
+      linear-gradient(180deg, rgba(213, 154, 67, 0.08), rgba(213, 154, 67, 0.02)),
+      var(--surface) !important;
+    border: 1px solid var(--line) !important;
+    break-inside: avoid;
+    margin-bottom: 12px;
+    padding: 14px 16px;
+  }
+
+  .certificate-item {
+    background: var(--surface) !important;
+    border: 1px solid var(--line) !important;
+    break-inside: avoid;
+  }
+
+  .section-title,
+  .section-title-main,
+  .profile-grid .label,
+  .desired-job-grid .label {
+    color: inherit;
+  }
+
+  .section-title,
+  .profile-grid .label,
+  .desired-job-grid .label,
+  .job-title,
+  .job-dates,
+  .icon svg {
+    color: var(--accent) !important;
+    fill: var(--accent) !important;
+  }
+
+  .section-title {
+    border-color: var(--accent) !important;
+    font-size: 0.78rem !important;
+    padding: 5px 6px !important;
+  }
+
+  .section-title-main {
+    color: #62707a !important;
+    border-color: var(--line) !important;
+    font-size: 0.78rem !important;
+    padding: 4px 6px !important;
+    margin: 10px 0 6px !important;
+  }
+
+  .job-title,
+  .job-dates,
+  .job-type {
+    break-after: avoid;
+  }
+
+  .contact-item,
+  .skill-name,
+  .language-name,
+  .profile-grid,
+  .desired-job-grid,
+  .kv-grid,
+  .certificate,
+  .certificate-meta {
+    font-size: 0.84rem !important;
+  }
+
+  .profile-grid,
+  .desired-job-grid,
+  .kv-grid {
+    gap: 5px 8px !important;
+  }
+
+  .bar {
+    background: rgba(255, 255, 255, 0.18) !important;
+  }
+
+  .bar.fill {
+    background: var(--accent) !important;
+  }
+
+  .contact-item,
+  .contact-link {
+    color: var(--text-light) !important;
+  }
+
+  .social-link {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(255, 255, 255, 0.16) !important;
+    color: var(--text-light) !important;
+  }
+
+  .main > .section,
+  .certificate-list,
+  #experienceJobs {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  .main > .section {
+    margin-bottom: 10px;
+  }
+
+  .main .section-title-main {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .certificate-list {
+    display: block;
+  }
+
+  .skill,
+  .language,
+  .job,
+  .certificate-item {
+    break-inside: avoid;
+  }
+
+  .section--desired,
+  .section--social {
+    display: none !important;
   }
 }
