@@ -253,7 +253,7 @@ body {
 
 .desired-job-grid {
   display: grid;
-  grid-template-columns: 0.4fr 1.3fr;
+  grid-template-columns: 0.5fr 1.3fr;
   gap: 8px 12px;
   font-size: 13.5px;
 }
